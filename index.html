@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PsicoPedagogía Integral | Apoyo Escolar Personalizado</title>
+<meta name="description" content="Acompañamiento psicopedagógico individualizado para niños y adolescentes. Mejora del aprendizaje y desarrollo emocional.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+    theme: { extend: { fontFamily: { 'sans': ['Poppins', 'sans-serif'] } } }
+}
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-indigo-50 via-white to-purple-50 font-poppins">
+
+<!-- HEADER -->
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm border-b border-gray-100">
+    <nav class="container mx-auto px-6 sm:px-12 py-4 flex justify-between items-center">
+        <div class="text-xl sm:text-2xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
+            <i class="fas fa-brain mr-2"></i>Aprende con Mente
+        </div>
+        <!-- Desktop menu -->
+        <ul class="hidden md:flex space-x-8">
+            <li><a href="#inicio" class="text-gray-700 hover:text-purple-600 font-medium py-2 transition">Inicio</a></li>
+            <li><a href="#servicios" class="text-gray-700 hover:text-purple-600 font-medium py-2 transition">Servicios</a></li>
+            <li><a href="#sobre-mi" class="text-gray-700 hover:text-purple-600 font-medium py-2 transition">Sobre mí</a></li>
+            <li><a href="#contacto" class="text-gray-700 hover:text-purple-600 font-medium py-2 transition">Contacto</a></li>
+        </ul>
+        <!-- Hamburger button -->
+        <button id="menu-btn" class="md:hidden text-gray-700 focus:outline-none" aria-label="Abrir menú">
+            <i id="menu-icon" class="fas fa-bars text-2xl"></i>
+        </button>
+    </nav>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-4">
+        <ul class="flex flex-col space-y-4">
+            <li><a href="#inicio" class="mobile-link text-gray-700 hover:text-purple-600 font-medium block py-2 transition">Inicio</a></li>
+            <li><a href="#servicios" class="mobile-link text-gray-700 hover:text-purple-600 font-medium block py-2 transition">Servicios</a></li>
+            <li><a href="#sobre-mi" class="mobile-link text-gray-700 hover:text-purple-600 font-medium block py-2 transition">Sobre mí</a></li>
+            <li><a href="#contacto" class="mobile-link text-gray-700 hover:text-purple-600 font-medium block py-2 transition">Contacto</a></li>
+        </ul>
+    </div>
+</header>
+
+<!-- HERO SECTION CENTRADO -->
+<section id="inicio" class="min-h-screen flex items-center bg-gradient-to-br from-purple-100 via-indigo-50 to-blue-100 pt-20">
+    <div class="container mx-auto px-6 sm:px-12 flex flex-col items-center text-center space-y-6">
+        
+        <!-- Experiencia -->
+        <div class="inline-block bg-gradient-to-r from-purple-100 to-indigo-100 px-6 py-3 rounded-full text-sm font-semibold text-purple-800">
+            <i class="fas fa-star mr-2"></i> +15 años de experiencia
+        </div>
+        
+        <!-- Título -->
+        <h1 class="text-3xl sm:text-5xl md:text-7xl font-bold bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 bg-clip-text text-transparent leading-tight">
+            Transformamos el <span class="block">aprendizaje de</span> <span class="block">tus hijos</span>
+        </h1>
+        
+        <!-- Descripción -->
+        <p class="text-base sm:text-lg md:text-xl text-gray-700 max-w-2xl">
+            Acompañamiento psicopedagógico personalizado para superar dificultades de aprendizaje y potenciar el desarrollo emocional.
+        </p>
+
+        <!-- Botón -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button onclick="document.getElementById('servicios').scrollIntoView()" 
+                    class="border-2 border-purple-200 text-purple-700 px-6 sm:px-10 py-3 sm:py-5 rounded-2xl font-bold text-base sm:text-lg hover:bg-purple-50 transition-all w-full sm:w-auto">
+                Ver Servicios
+            </button>
+        </div>
+
+        <!-- Imagen -->
+        <div class="relative w-full max-w-md mx-auto mt-6">
+            <img src="https://images.unsplash.com/photo-1576091160399-1d65cdaa8782?w=500&fit=crop" 
+                 alt="Niños aprendiendo" class="rounded-3xl shadow-2xl w-full">
+        </div>
+
+    </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="py-24 md:py-32 bg-white">
+    <div class="container mx-auto px-6 sm:px-12">
+        <div class="text-center mb-16 md:mb-20">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-6">
+                Mis Servicios
+            </h2>
+            <p class="text-base sm:text-xl text-gray-600 max-w-2xl mx-auto">
+                Acompañamiento integral adaptado a las necesidades específicas de cada niño y familia
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="group bg-gradient-to-br from-purple-50 to-indigo-50 p-6 md:p-10 rounded-3xl hover:shadow-2xl transition-all border border-purple-100 hover:-translate-y-2 md:hover:-translate-y-4">
+                <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-2xl flex items-center justify-center text-xl md:text-2xl text-white mb-4 md:mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-book-reader"></i>
+                </div>
+                <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-3 md:mb-4">Diagnóstico y Evaluación</h3>
+                <p class="text-gray-600 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
+                    Evaluación completa de fortalezas y áreas de mejora. Identificación precisa de dificultades específicas de aprendizaje.
+                </p>
+                <div class="text-purple-600 font-semibold">Desde $25.000</div>
+            </div>
+            <div class="group bg-gradient-to-br from-indigo-50 to-blue-50 p-6 md:p-10 rounded-3xl hover:shadow-2xl transition-all border border-indigo-100 hover:-translate-y-2 md:hover:-translate-y-4 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-indigo-500/5"></div>
+                <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-2xl flex items-center justify-center text-xl md:text-2xl text-white mb-4 md:mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-3 md:mb-4">Entrenamiento de Estrategias</h3>
+                <p class="text-gray-600 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
+                    Desarrollo de herramientas personalizadas para mejorar comprensión lectora, matemáticas y organización.
+                </p>
+                <div class="text-indigo-600 font-semibold">Paquetes desde $80.000</div>
+            </div>
+            <div class="group bg-gradient-to-br from-blue-50 to-purple-50 p-6 md:p-10 rounded-3xl hover:shadow-2xl transition-all border border-blue-100 hover:-translate-y-2 md:hover:-translate-y-4">
+                <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center text-xl md:text-2xl text-white mb-4 md:mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-3 md:mb-4">Acompañamiento Emocional</h3>
+                <p class="text-gray-600 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
+                    Trabajo en autoestima, motivación y manejo emocional para potenciar el rendimiento escolar.
+                </p>
+                <div class="text-blue-600 font-semibold">Sesiones $30.000</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SOBRE MÍ -->
+<section id="sobre-mi" class="py-24 md:py-32 bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-600 text-white">
+    <div class="container mx-auto px-6 sm:px-12 flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-12">
+        
+        <!-- Texto -->
+        <div class="flex-1 space-y-6">
+            <h2 class="text-2xl sm:text-4xl md:text-5xl font-bold leading-tight">
+                15 años acompañando <span class="block text-3xl sm:text-5xl md:text-6xl">historias de éxito</span>
+            </h2>
+            <div class="space-y-4 text-base sm:text-lg md:text-xl leading-relaxed">
+                <p>Especialista en Psicopedagogía con formación en Neurociencias del Aprendizaje.</p>
+                <p>Más de 500 niños y familias acompañados con resultados comprobables.</p>
+                <p>Enfoque integral: cognitivo, emocional y familiar.</p>
+            </div>
+
+            <!-- Datos clave -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8 text-center">
+                <div class="p-6 bg-white/10 rounded-2xl backdrop-blur-sm">
+                    <div class="text-3xl sm:text-4xl font-bold text-yellow-400 mb-2">500+</div>
+                    <div>Niños atendidos</div>
+                </div>
+                <div class="p-6 bg-white/10 rounded-2xl backdrop-blur-sm">
+                    <div class="text-3xl sm:text-4xl font-bold text-yellow-400 mb-2">98%</div>
+                    <div>Éxito escolar</div>
+                </div>
+                <div class="p-6 bg-white/10 rounded-2xl backdrop-blur-sm">
+                    <div class="text-3xl sm:text-4xl font-bold text-yellow-400 mb-2">15</div>
+                    <div>Años experiencia</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Imagen -->
+        <div class="flex-1 relative w-full max-w-md mx-auto md:mx-0">
+            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&fit=crop" 
+                 alt="Especialista en psicopedagogía" class="rounded-3xl shadow-2xl w-full border-8 border-white/30">
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="py-24 md:py-32 bg-gray-50">
+    <div class="container mx-auto px-6 sm:px-12">
+        <div class="text-center mb-16 md:mb-20">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-6">Lo que dicen las familias</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 md:p-10 rounded-3xl shadow-xl hover:shadow-2xl transition-all">
+                <div class="flex items-center mb-4 md:mb-6">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full flex items-center justify-center text-2xl text-white font-bold mr-4">MR</div>
+                    <div>
+                        <div class="font-semibold text-gray-900">María R.</div>
+                        <div class="text-sm text-gray-500">Madre de Mateo (12 años)</div>
+                    </div>
+                </div>
+                <div class="text-xl mb-4 md:mb-6">⭐⭐⭐⭐⭐</div>
+                <p class="text-gray-700 italic text-sm md:text-base">"En solo 3 meses mi hijo mejoró 3 puntos en matemáticas y recuperó la confianza en sí mismo."</p>
+            </div>
+            <div class="bg-white p-6 md:p-10 rounded-3xl shadow-xl hover:shadow-2xl transition-all">
+                <div class="flex items-center mb-4 md:mb-6">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full flex items-center justify-center text-2xl text-white font-bold mr-4">MR</div>
+                    <div>
+                        <div class="font-semibold text-gray-900">María R.</div>
+                        <div class="text-sm text-gray-500">Madre de Mateo (12 años)</div>
+                    </div>
+                </div>
+                <div class="text-xl mb-4 md:mb-6">⭐⭐⭐⭐⭐</div>
+                <p class="text-gray-700 italic text-sm md:text-base">"En solo 3 meses mi hijo mejoró 3 puntos en matemáticas y recuperó la confianza en sí mismo."</p>
+            </div>
+            <div class="bg-white p-6 md:p-10 rounded-3xl shadow-xl hover:shadow-2xl transition-all">
+                <div class="flex items-center mb-4 md:mb-6">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full flex items-center justify-center text-2xl text-white font-bold mr-4">MR</div>
+                    <div>
+                        <div class="font-semibold text-gray-900">María R.</div>
+                        <div class="text-sm text-gray-500">Madre de Mateo (12 años)</div>
+                    </div>
+                </div>
+                <div class="text-xl mb-4 md:mb-6">⭐⭐⭐⭐⭐</div>
+                <p class="text-gray-700 italic text-sm md:text-base">"En solo 3 meses mi hijo mejoró 3 puntos en matemáticas y recuperó la confianza en sí mismo."</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="py-24 md:py-32 bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-600 text-white">
+    <div class="container mx-auto px-6 sm:px-12 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent">
+                ¿Listos para el cambio?
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto mb-12">
+                <div class="bg-white/10 p-6 md:p-8 rounded-3xl backdrop-blur-sm w-full">
+                    <div class="text-3xl mb-4"><i class="fas fa-phone"></i></div>
+                    <div class="text-xl md:text-2xl font-bold">+54 11 5582-0546</div>
+                    <div>Llamadas Lunes a Viernes 9-18hs</div>
+                </div>
+                <div class="bg-white/10 p-6 md:p-8 rounded-3xl backdrop-blur-sm w-full break-words">
+                    <div class="text-3xl mb-4"><i class="fas fa-envelope"></i></div>
+                    <div class="text-sm md:text-base font-bold break-all"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bedfceccdbd0dadbddd1d0d3dbd0cadbfed9d3dfd7d290ddd1d3">[email&#160;protected]</a></div>
+                    <div>Respuesta en menos de 2hs</div>
+                </div>
+            </div>
+            <button onclick="window.open('https://wa.me/541155820546', '_blank')" 
+                    class="bg-green-500 hover:bg-green-600 text-white px-6 sm:px-12 py-4 sm:py-6 rounded-full text-base sm:text-xl font-bold shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all inline-flex items-center justify-center w-full sm:w-auto">
+                <i class="fab fa-whatsapp mr-3 text-xl sm:text-2xl"></i>
+                Contactanos por WhatsApp
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-6 sm:px-12 text-center">
+        <div class="text-2xl sm:text-3xl mb-6 break-words">
+            <i class="fas fa-brain text-purple-400 mr-3"></i>Aprende Con Mente Pedagogía Integral
+        </div>
+        <p class="text-gray-400 mb-8 max-w-md mx-auto">
+            Transformando futuros, un aprendizaje a la vez.
+        </p>
+        <div class="flex justify-center space-x-6 text-2xl mb-8">
+            <a href="#" class="text-purple-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-purple-400 hover:text-white transition"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="text-green-400 hover:text-white transition"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <div class="text-sm text-gray-500">
+            © 2026 Aprende Con Mente Pedagogía Integral. Todos los derechos reservados.
+        </div>
+    </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// Hamburger menu
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const menuIcon = document.getElementById('menu-icon');
+
+menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    menuIcon.classList.toggle('fa-bars');
+    menuIcon.classList.toggle('fa-times');
+});
+
+document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.add('fa-bars');
+        menuIcon.classList.remove('fa-times');
+    });
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anch
