@@ -1,2 +1,2 @@
 # web
-Sitio web del proyecto Aprender con Mente
+Sitio web del proyecto Aprende con Mente
