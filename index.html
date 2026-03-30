@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elisabet Escobar | Psicopedagogía & Método N.E.U.R.O-A</title>
+<meta name="description" content="Psicopedagoga especialista en Método N.E.U.R.O-A, Autismo y Alfabetización Inicial. Villa Maipú, San Martín. Turnos: 11 5582 0546.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Poppins','sans-serif'] } } } }</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  /* ── Base ── */
+  html { scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
+  body { background: #fffbeb; font-family: 'Poppins', sans-serif; }
+
+  /* ── Colores reutilizables ── */
+  .section-warm { background: linear-gradient(135deg, #92400e 0%, #b45309 50%, #d97706 100%); }
+
+  /* ── Header hamburger ── */
+  #menu-btn {
+    min-width: 48px; min-height: 48px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 8px; -webkit-tap-highlight-color: transparent;
+  }
+
+  /* ── Tarjetas de servicios ── */
+  .service-card:active { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(217,119,6,0.15); }
+
+  /* ── Inputs: evita zoom en iOS ── */
+  input, textarea, select { font-size: 16px !important; }
+
+  /* ── Estrellas ── */
+  .stars { color: #f59e0b; }
+
+  /* ── Chatbot flotante ── */
+  @keyframes pulse-green {
+    0%   { box-shadow: 0 0 0 0    rgba(37,211,102,0.5); }
+    70%  { box-shadow: 0 0 0 14px rgba(37,211,102,0);   }
+    100% { box-shadow: 0 0 0 0    rgba(37,211,102,0);   }
+  }
+  #chat-toggle {
+    width: 62px; height: 62px; background: #25D366; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; border: none; -webkit-tap-highlight-color: transparent;
+    animation: pulse-green 2s infinite;
+  }
+  #chat-toggle:active { transform: scale(0.93); }
+
+  #chat-box {
+    display: none; width: 320px; max-width: calc(100vw - 48px);
+    background: #fff; border-radius: 20px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.18); overflow: hidden;
+  }
+  #chat-messages {
+    padding: 16px; max-height: 300px; overflow-y: auto;
+    display: flex; flex-direction: column; gap: 10px; background: #fffbeb;
+  }
+  .msg-bot {
+    background: #fde68a; color: #451a03;
+    padding: 10px 14px; border-radius: 16px 16px 16px 4px;
+    font-size: 14px; line-height: 1.5; max-width: 85%; align-self: flex-start;
+    white-space: pre-line;
+  }
+  .msg-user {
+    background: #d97706; color: #fff;
+    padding: 10px 14px; border-radius: 16px 16px 4px 16px;
+    font-size: 14px; max-width: 85%; align-self: flex-end;
+  }
+  #chat-input-area {
+    padding: 12px; background: #fff;
+    border-top: 1px solid #fde68a; display: flex; gap: 8px;
+  }
+  #chat-input {
+    flex: 1; border: 1.5px solid #fde68a; border-radius: 12px;
+    padding: 10px 12px; font-size: 15px; outline: none;
+    font-family: 'Poppins', sans-serif; color: #451a03; background: #fffbeb;
+  }
+  #chat-send {
+    background: #d97706; color: #fff; border: none; border-radius: 12px;
+    width: 42px; height: 42px; display: flex; align-items: center;
+    justify-content: center; cursor: pointer; flex-shrink: 0; font-size: 18px;
+  }
+  #chat-send:active { opacity: 0.8; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ HEADER ═══════════════════ -->
+<header class="sticky top-0 z-50 shadow-sm border-b"
+        style="background:rgba(255,251,235,0.93);backdrop-filter:blur(12px);border-color:#fde68a;">
+  <nav class="container mx-auto px-6 sm:px-12 py-3 flex justify-between items-center">
+
+    <div class="text-xl sm:text-2xl font-bold" style="color:#d97706;">
+      <i class="fas fa-brain mr-2"></i>Aprende con Mente
+    </div>
+
+    <!-- Menú desktop -->
+    <ul class="hidden md:flex space-x-6">
+      <li><a href="#inicio"      class="font-medium py-2 transition hover:opacity-60" style="color:#92400e;">Inicio</a></li>
+      <li><a href="#servicios"   class="font-medium py-2 transition hover:opacity-60" style="color:#92400e;">Servicios</a></li>
+      <li><a href="#taller"      class="font-medium py-2 transition hover:opacity-60" style="color:#92400e;">Taller</a></li>
+      <li><a href="#sobre-mi"    class="font-medium py-2 transition hover:opacity-60" style="color:#92400e;">Sobre mí</a></li>
+      <li><a href="#inscripcion" class="font-medium py-2 transition hover:opacity-60" style="color:#92400e;">Inscripción</a></li>
+      <li><a href="#contacto"    class="font-medium py-2 transition hover:opacity-60" style="color:#92400e;">Contacto</a></li>
+    </ul>
+
+    <!-- CTA desktop -->
+    <a href="https://wa.me/541127325400" target="_blank" rel="noopener"
+       class="hidden md:flex items-center gap-2 text-white px-5 py-2 rounded-full font-semibold text-sm transition hover:opacity-90"
+       style="background:#25D366;">
+      <i class="fab fa-whatsapp"></i> Consultar
+    </a>
+
+    <!-- Hamburger -->
+    <button id="menu-btn" class="md:hidden focus:outline-none" style="color:#92400e;" aria-label="Abrir menú">
+      <i id="menu-icon" class="fas fa-bars text-2xl"></i>
+    </button>
+  </nav>
+
+  <!-- Menú móvil -->
+  <div id="mobile-menu" class="hidden md:hidden px-6 py-4 border-t"
+       style="background:#fffbeb;border-color:#fde68a;">
+    <ul class="flex flex-col space-y-1">
+      <li><a href="#inicio"      class="mobile-link font-medium block py-3 border-b" style="color:#92400e;border-color:#fef3c7;">Inicio</a></li>
+      <li><a href="#servicios"   class="mobile-link font-medium block py-3 border-b" style="color:#92400e;border-color:#fef3c7;">Servicios</a></li>
+      <li><a href="#taller"      class="mobile-link font-medium block py-3 border-b" style="color:#92400e;border-color:#fef3c7;">Taller</a></li>
+      <li><a href="#sobre-mi"    class="mobile-link font-medium block py-3 border-b" style="color:#92400e;border-color:#fef3c7;">Sobre mí</a></li>
+      <li><a href="#inscripcion" class="mobile-link font-medium block py-3 border-b" style="color:#92400e;border-color:#fef3c7;">Inscripción</a></li>
+      <li><a href="#contacto"    class="mobile-link font-medium block py-3"          style="color:#92400e;">Contacto</a></li>
+    </ul>
+    <a href="https://wa.me/541127325400" target="_blank" rel="noopener"
+       class="mt-4 flex items-center justify-center gap-2 text-white px-6 py-3 rounded-2xl font-bold text-base w-full"
+       style="background:#25D366;">
+      <i class="fab fa-whatsapp text-xl"></i> Consultar por WhatsApp
+    </a>
+  </div>
+</header>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<section id="inicio" class="min-h-screen flex items-center pt-20 pb-16"
+         style="background:linear-gradient(135deg,#fffbeb 0%,#fef3c7 50%,#fde68a 100%);">
+  <div class="container mx-auto px-6 sm:px-12 flex flex-col items-center text-center space-y-5">
+
+    <div class="inline-block px-5 py-2 rounded-full text-sm font-semibold"
+         style="background:#fde68a;color:#92400e;">
+      <i class="fas fa-star mr-2" style="color:#f59e0b;"></i>
+      Comprender para Aprender
+    </div>
+
+    <h1 class="text-3xl sm:text-5xl md:text-7xl font-bold leading-tight" style="color:#92400e;">
+      Aprendizaje real
+      <span class="block" style="color:#d97706;">desde la</span>
+      <span class="block"> Neurofunción</span>
+    </h1>
+
+    <p class="text-base sm:text-lg md:text-xl max-w-2xl" style="color:#78350f;">
+      Acompañamiento psicopedagógico centrado en comprender cómo aprende cada niño
+      y trabajar sobre las causas del aprendizaje.
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-3 justify-center w-full sm:w-auto">
+      <a href="https://wa.me/541127325400?text=Hola%20Elisabet%2C%20quiero%20consultar%20sobre%20los%20servicios"
+         target="_blank" rel="noopener"
+         class="flex items-center justify-center gap-2 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all w-full sm:w-auto active:opacity-80"
+         style="background:#25D366;box-shadow:0 8px 24px rgba(37,211,102,0.3);">
+        <i class="fab fa-whatsapp text-2xl"></i> Quiero una consulta
+      </a>
+      <button onclick="document.getElementById('servicios').scrollIntoView({behavior:'smooth'})"
+              class="border-2 px-8 py-4 rounded-2xl font-bold text-lg transition-all w-full sm:w-auto active:opacity-70"
+              style="border-color:#f59e0b;color:#d97706;">
+        Ver Servicios
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- wave hero → servicios -->
+<div style="margin-top:-2px;line-height:0;background:linear-gradient(135deg,#fffbeb,#fde68a);">
+  <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;">
+    <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#fffbeb"/>
+  </svg>
+</div>
+
+<!-- ═══════════════════ SERVICIOS ═══════════════════ -->
+<section id="servicios" class="py-20 md:py-32" style="background:#fffbeb;">
+  <div class="container mx-auto px-6 sm:px-12">
+
+    <div class="text-center mb-12 md:mb-20">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" style="color:#92400e;">Conocé cómo trabajamos</h2>
+      <p class="text-base sm:text-xl max-w-2xl mx-auto" style="color:#b45309;">
+        Elisabet Escobar Psicopedagoga · Diplomada en Autismo Desarrolladora del Método N.E.U.R.O-A
++15 años de experiencia en educación, inclusión y acompañamiento a familias.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+
+      <div class="service-card group rounded-3xl p-6 md:p-10 transition-all duration-300 hover:shadow-2xl hover:-translate-y-4 cursor-pointer border"
+           style="background:linear-gradient(135deg,#fffbeb,#fef3c7);border-color:#fde68a;">
+        <div class="w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center text-xl md:text-2xl text-white mb-4 md:mb-6 group-hover:scale-110 transition-transform"
+             style="background:linear-gradient(135deg,#f59e0b,#d97706);">
+          <i class="fas fa-book-reader"></i>
+        </div>
+        <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4" style="color:#451a03;">ACOMPAÑAMIENTO PSICOPEDAGÓGICO</h3>
+        <p class="mb-4 md:mb-6 leading-relaxed text-sm md:text-base" style="color:#78350f;">
+       Tratamiento e intervención, seguimiento personalizado para abordar las dificultades desde su origen. Estimulación de atención, memoria y funciones cognitivas. Intervención en dificultades de aprendizaje. Alfabetización inicial. Trabajo individual adaptado a cada niño.
+        </p>
+        <div class="font-semibold" style="color:#d97706;">
+          ARS 22.000 <span class="font-normal text-sm" style="color:#b45309;">(por sesión de 45 mins)</span>
+        </div>
+      </div>
+
+      <div class="service-card group rounded-3xl p-6 md:p-10 transition-all duration-300 hover:shadow-2xl hover:-translate-y-4 cursor-pointer border"
+           style="background:linear-gradient(135deg,#fef3c7,#fde68a);border-color:#f59e0b;">
+        <div class="w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center text-xl md:text-2xl text-white mb-4 md:mb-6 group-hover:scale-110 transition-transform"
+             style="background:linear-gradient(135deg,#d97706,#92400e);">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4" style="color:#451a03;">GRUPOS DE ESTIMULACIÓN Y ALFABETIZACIÓN</h3>
+        <p class="mb-4 md:mb-6 leading-relaxed text-sm md:text-base" style="color:#78350f;">
+          Espacios reducidos para potenciar el aprendizaje desde un enfoque lúdico y estructurado. Atención, lenguaje y conducta. Inicio en lectura y escritura. Juego dirigido con objetivos claros.
+        </p>
+        <div class="font-semibold" style="color:#d97706;">
+          ARS 44.000 <span class="font-normal text-sm" style="color:#b45309;">(2 sesiones por turno)</span>
+        </div>
+      </div>
+
+      <div class="service-card group rounded-3xl p-6 md:p-10 transition-all duration-300 hover:shadow-2xl hover:-translate-y-4 cursor-pointer border"
+           style="background:linear-gradient(135deg,#fffbeb,#fef3c7);border-color:#fde68a;">
+        <div class="w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center text-xl md:text-2xl text-white mb-4 md:mb-6 group-hover:scale-110 transition-transform"
+             style="background:linear-gradient(135deg,#f59e0b,#b45309);">
+          <i class="fas fa-heart"></i>
+        </div>
+        <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4" style="color:#451a03;">INCLUSIÓN EDUCATIVA</h3>
+        <p class="mb-4 md:mb-6 leading-relaxed text-sm md:text-base" style="color:#78350f;">
+          Trabajo articulado con escuelas para acompañar los procesos de inclusión. Orientación a docentes. Adaptaciones pedagógicas. Estrategias de acompañamiento escolar. Seguimiento del proceso educativo.
+        </p>
+        <div class="font-semibold" style="color:#d97706;">
+          $25.000 <span class="font-normal text-sm" style="color:#b45309;">(por sesión de 45 mins)</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-10 md:mt-14">
+      <a href="https://wa.me/541127325400?text=Hola%20Elisabet%2C%20quiero%20consultar%20sobre%20los%20servicios"
+         target="_blank" rel="noopener"
+         class="inline-flex items-center gap-2 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all active:scale-95"
+         style="background:linear-gradient(135deg,#d97706,#92400e);box-shadow:0 8px 24px rgba(217,119,6,0.3);">
+        <i class="fab fa-whatsapp text-xl"></i> Consultá sin compromiso
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- wave servicios → taller -->
+<div style="margin-top:-2px;line-height:0;background:#fffbeb;">
+  <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;">
+    <path d="M0,0 C480,80 960,0 1440,60 L1440,80 L0,80 Z" fill="#fef3c7"/>
+  </svg>
+</div>
+
+<!-- ═══════════════════ TALLER ═══════════════════ -->
+<section id="taller" class="py-20 md:py-28" style="background:#fef3c7;">
+  <div class="container mx-auto px-6 sm:px-12">
+
+    <div class="text-center mb-12">
+      <span class="inline-block text-sm font-bold px-4 py-1 rounded-full mb-4"
+            style="background:#fde68a;color:#92400e;">✏️ INSCRIPCIONES ABIERTAS</span>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" style="color:#92400e;">
+        Taller de Pre-Alfabetización<br class="hidden sm:block"> y Alfabetización Inicial
+      </h2>
+      <p class="font-semibold text-base sm:text-lg max-w-xl mx-auto" style="color:#b45309;">
+        ¡Aprender a leer y escribir puede ser una experiencia positiva y significativa!
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+
+      <!-- Qué trabajamos -->
+      <div class="rounded-3xl p-6 sm:p-8 shadow-lg border" style="background:#fffbeb;border-color:#fde68a;">
+        <h3 class="text-xl font-bold mb-5" style="color:#451a03;">📚 ¿Qué trabajamos?</h3>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <span class="text-xl flex-shrink-0">🔤</span>
+            <span class="font-semibold" style="color:#78350f;">Reconocimiento de letras y sonidos</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-xl flex-shrink-0">🧠</span>
+            <div>
+              <span class="font-semibold" style="color:#78350f;">Conciencia fonológica</span>
+              </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-xl flex-shrink-0">✍️</span>
+            <span class="font-semibold" style="color:#78350f;">Escritura inicial y trazos correctos</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-xl flex-shrink-0">📖</span>
+            <span class="font-semibold" style="color:#78350f;">Comprensión de palabras y primeras lecturas</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-xl flex-shrink-0">🎲</span>
+            <span class="font-semibold" style="color:#78350f;">Actividades multisensoriales, lúdicas y personalizadas</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Detalles + CTA -->
+      <div class="space-y-4">
+
+        <div class="rounded-3xl p-6 sm:p-8 shadow-lg border" style="background:#fffbeb;border-color:#fde68a;">
+          <h3 class="text-xl font-bold mb-5" style="color:#451a03;">📋 Detalles del taller</h3>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-base" style="background:#fde68a;">👥</span>
+              <span style="color:#78350f;">Atención personalizada <strong>(máx. 4 niños)</strong></span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-base" style="background:#fde68a;">👶</span>
+              <span style="color:#78350f;">Niños <strong>desde los 4 años</strong></span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-base" style="background:#fde68a;">🎨</span>
+              <span style="color:#78350f;"><strong>Materiales y recursos incluidos</strong></span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-base" style="background:#fde68a;">📍</span>
+              <span style="color:#78350f;">Villa Maipú – San Martín</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-3xl p-6 sm:p-8 text-white"
+             style="background:linear-gradient(135deg,#d97706,#92400e);">
+          <p class="text-base sm:text-lg font-medium leading-relaxed">
+            💡 Propuestas lúdicas y estrategias psicopedagógicas para acompañar el aprendizaje respetando el ritmo de cada niño.
+          </p>
+        </div>
+
+        <a href="https://wa.me/541127325400?text=Hola%20Elisabet%2C%20quiero%20info%20sobre%20el%20Taller%20de%20Alfabetizaci%C3%B3n"
+           target="_blank" rel="noopener"
+           class="flex items-center justify-center gap-2 text-white px-6 py-4 rounded-2xl font-bold text-lg transition-all w-full active:scale-95"
+           style="background:#25D366;box-shadow:0 6px 20px rgba(37,211,102,0.3);">
+          <i class="fab fa-whatsapp text-xl"></i> Consultar por el taller
+        </a>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- wave taller → sobre mí -->
+<div style="margin-top:-2px;line-height:0;background:#fef3c7;">
+  <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;">
+    <path d="M0,0 C480,80 960,0 1440,60 L1440,80 L0,80 Z" fill="#92400e"/>
+  </svg>
+</div>
+
+<!-- ═══════════════════ SOBRE MÍ ═══════════════════ -->
+<section id="sobre-mi" class="py-20 md:py-32 text-white section-warm">
+  <div class="container mx-auto px-6 sm:px-12">
+
+    <div class="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-10 md:gap-12">
+
+      <!-- Texto -->
+      <div class="flex-1 space-y-6">
+        <div>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-1">Elisabet Escobar</h2>
+          <p style="color:rgba(255,255,255,0.7);">MP 286478</p>
+        </div>
+
+        <div class="space-y-2 text-base sm:text-lg">
+          <div class="flex items-center gap-3 justify-center md:justify-start">
+            <span>🎓</span>
+            <span><strong>Psicopedagoga</strong> · Diplomada en Autismo</span>
+          </div>
+          <div class="flex items-center gap-3 justify-center md:justify-start">
+            <span>🧠</span>
+            <span>Creadora del <strong>Método N.E.U.R.O-A</strong></span>
+          </div>
+          <div class="flex items-center gap-3 justify-center md:justify-start">
+            <span>💡</span>
+            <span>Psicopedagogía <strong>Neurofuncional</strong></span>
+          </div>
+        </div>
+
+        <blockquote class="rounded-2xl p-5 border italic text-base sm:text-lg leading-relaxed"
+                    style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.25);color:rgba(255,255,255,0.9);">
+          "El aprendizaje ocurre cuando se generan las condiciones adecuadas."
+        </blockquote>
+
+        <div>
+          <h3 class="font-bold text-lg sm:text-xl mb-4">📚 Acompañamiento en:</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm sm:text-base">
+            <div class="rounded-xl px-4 py-3" style="background:rgba(255,255,255,0.12);">👶 Primera infancia</div>
+            <div class="rounded-xl px-4 py-3" style="background:rgba(255,255,255,0.12);">📖 Dificultades de aprendizaje</div>
+            <div class="rounded-xl px-4 py-3" style="background:rgba(255,255,255,0.12);">✏️ Alfabetización inicial</div>
+            <div class="rounded-xl px-4 py-3" style="background:rgba(255,255,255,0.12);">🏫 Inclusión educativa</div>
+            <div class="rounded-xl px-4 py-3 sm:col-span-2" style="background:rgba(255,255,255,0.12);">👨‍👩‍👧 Orientación y acompañamiento familiar</div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4 text-center pt-2">
+          <div class="p-4 rounded-2xl" style="background:rgba(255,255,255,0.12);">
+            <div class="text-2xl sm:text-4xl font-bold mb-1" style="color:#fde68a;">300+</div>
+            <div class="text-sm sm:text-base">Niños atendidos</div>
+          </div>
+          <div class="p-4 rounded-2xl" style="background:rgba(255,255,255,0.12);">
+            <div class="text-2xl sm:text-4xl font-bold mb-1" style="color:#fde68a;">98%</div>
+            <div class="text-sm sm:text-base">Éxito escolar</div>
+          </div>
+          <div class="p-4 rounded-2xl" style="background:rgba(255,255,255,0.12);">
+            <div class="text-2xl sm:text-4xl font-bold mb-1" style="color:#fde68a;">15+</div>
+            <div class="text-sm sm:text-base">Años de experiencia</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Imagen con fallback SVG -->
+      <div class="flex-1 relative w-full max-w-md mx-auto md:mx-0">
+        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&fit=crop"
+             alt="Elisabet Escobar - Psicopedagoga"
+             loading="lazy" decoding="async"
+             class="rounded-3xl shadow-2xl w-full"
+             style="border:8px solid rgba(255,255,255,0.25);"
+             onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'500\' height=\'420\' viewBox=\'0 0 500 420\'%3E%3Crect width=\'500\' height=\'420\' fill=\'%23b45309\'/%3E%3Ctext x=\'50%25\' y=\'37%25\' font-size=\'52\' text-anchor=\'middle\' dominant-baseline=\'middle\'%3E👩‍🏫%3C/text%3E%3Ctext x=\'50%25\' y=\'60%25\' font-family=\'sans-serif\' font-size=\'20\' fill=\'%23fde68a\' text-anchor=\'middle\' dominant-baseline=\'middle\' font-weight=\'700\'%3EElisabet Escobar%3C/text%3E%3Ctext x=\'50%25\' y=\'72%25\' font-family=\'sans-serif\' font-size=\'15\' fill=\'rgba(255,255,255,0.8)\' text-anchor=\'middle\' dominant-baseline=\'middle\'%3EMPs 286478%3C/text%3E%3C/svg%3E';">
+        <div class="absolute -bottom-4 -right-4 font-bold text-sm px-4 py-2 rounded-2xl shadow-lg"
+             style="background:#fde68a;color:#92400e;">Método N.E.U.R.O-A</div>
+      </div>
+
+    </div>
+
+    <!-- Método N.E.U.R.O-A -->
+    <div class="mt-16 rounded-3xl p-6 sm:p-10 border"
+         style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);">
+      <h3 class="text-xl sm:text-2xl font-bold mb-2 text-center">🧠 Método N.E.U.R.O-A</h3>
+      <p class="text-center text-sm sm:text-base mb-8" style="color:rgba(255,255,255,0.75);">
+        Intervenciones orientadas a fortalecer las funciones que sostienen el aprendizaje
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+        <div class="rounded-2xl p-5" style="background:rgba(255,255,255,0.1);">
+          <div class="text-3xl mb-2">🎯</div>
+          <div class="font-bold text-lg mb-1">Atención</div>
+          <div class="text-sm" style="color:rgba(255,255,255,0.7);">Desarrollamos la capacidad de foco y concentración</div>
+        </div>
+        <div class="rounded-2xl p-5" style="background:rgba(255,255,255,0.1);">
+          <div class="text-3xl mb-2">💾</div>
+          <div class="font-bold text-lg mb-1">Memoria</div>
+          <div class="text-sm" style="color:rgba(255,255,255,0.7);">Fortalecemos los procesos de retención y evocación</div>
+        </div>
+        <div class="rounded-2xl p-5" style="background:rgba(255,255,255,0.1);">
+          <div class="text-3xl mb-2">📈</div>
+          <div class="font-bold text-lg mb-1">Funciones del aprendizaje</div>
+          <div class="text-sm" style="color:rgba(255,255,255,0.7);">Potenciamos las habilidades cognitivas fundamentales</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- wave sobre mí → testimonios -->
+<div style="margin-top:-2px;line-height:0;background:#92400e;">
+  <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;">
+    <path d="M0,60 C360,0 1080,80 1440,20 L1440,80 L0,80 Z" fill="#fef3c7"/>
+  </svg>
+</div>
+
+<!-- ═══════════════════ TESTIMONIOS ═══════════════════ -->
+<section class="py-20 md:py-32" style="background:#fef3c7;">
+  <div class="container mx-auto px-6 sm:px-12">
+
+    <div class="text-center mb-12 md:mb-16">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" style="color:#92400e;">Lo que dicen las familias</h2>
+      <p class="text-base sm:text-lg" style="color:#b45309;">Más de 300 familias ya confiaron en nosotros</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+
+      <div class="rounded-3xl p-6 md:p-10 shadow-xl transition-all hover:shadow-2xl border" style="background:#fffbeb;border-color:#fde68a;">
+        <div class="flex items-center mb-4">
+          <div class="w-14 h-14 rounded-full flex items-center justify-center text-xl text-white font-bold mr-4 flex-shrink-0"
+               style="background:linear-gradient(135deg,#f59e0b,#d97706);">CP</div>
+          <div>
+            <div class="font-semibold" style="color:#451a03;">Camila P.</div>
+            <div class="text-sm" style="color:#b45309;">Madre de Mateo (10 años)</div>
+          </div>
+        </div>
+        <div class="stars text-lg mb-3">★★★★★</div>
+        <p class="italic text-sm md:text-base leading-relaxed" style="color:#78350f;">
+          "En pocos meses vimos un cambio enorme.No solo mejoró en matemáticas, también recuperó la confianza en sí mismo. Hoy se siente más seguro y puede avanzar."
+        </p>
+      </div>
+
+      <div class="rounded-3xl p-6 md:p-10 shadow-xl transition-all hover:shadow-2xl border" style="background:#fffbeb;border-color:#fde68a;">
+        <div class="flex items-center mb-4">
+          <div class="w-14 h-14 rounded-full flex items-center justify-center text-xl text-white font-bold mr-4 flex-shrink-0"
+               style="background:linear-gradient(135deg,#d97706,#92400e);">NG</div>
+          <div>
+            <div class="font-semibold" style="color:#451a03;">Natalia G.</div>
+            <div class="text-sm" style="color:#b45309;">Madre de Sofía (11 años)</div>
+          </div>
+        </div>
+        <div class="stars text-lg mb-3">★★★★★</div>
+        <p class="italic text-sm md:text-base leading-relaxed" style="color:#78350f;">
+          "Mi hija pasó de no querer ir al colegio a ir contenta todos los días. Hoy comprende textos, completa su carpeta y logró avanzar de grado. El acompañamiento hizo una gran diferencia en su aprendizaje y en su seguridad."
+        </p>
+      </div>
+
+      <div class="rounded-3xl p-6 md:p-10 shadow-xl transition-all hover:shadow-2xl border" style="background:#fffbeb;border-color:#fde68a;">
+        <div class="flex items-center mb-4">
+          <div class="w-14 h-14 rounded-full flex items-center justify-center text-xl text-white font-bold mr-4 flex-shrink-0"
+               style="background:linear-gradient(135deg,#b45309,#78350f);">LB</div>
+          <div>
+            <div class="font-semibold" style="color:#451a03;">Laura B.</div>
+            <div class="text-sm" style="color:#b45309;">Madre de Bruno (8 años)</div>
+          </div>
+        </div>
+        <div class="stars text-lg mb-3">★★★★★</div>
+        <p class="italic text-sm md:text-base leading-relaxed" style="color:#78350f;">
+          "Inició el proceso sin adquisición de la lectura y escritura, con dificultades en atención y memoria. Actualmente logró avances significativos, incorporando estrategias que utiliza de manera autónoma, tanto en lo escolar como en su vida diaria."
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- wave testimonios → inscripción -->
+<div style="margin-top:-2px;line-height:0;background:#fef3c7;">
+  <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;">
+    <path d="M0,20 C480,80 960,0 1440,50 L1440,80 L0,80 Z" fill="#fffbeb"/>
+  </svg>
+</div>
+
+<!-- ═══════════════════ INSCRIPCIÓN ═══════════════════ -->
+<section id="inscripcion" class="py-20 md:py-28" style="background:#fffbeb;">
+  <div class="container mx-auto px-6 sm:px-12">
+    <div class="max-w-2xl mx-auto text-center">
+
+      <!-- Ícono -->
+      <div class="w-20 h-20 mx-auto mb-6 rounded-3xl flex items-center justify-center text-3xl text-white"
+           style="background:linear-gradient(135deg,#f59e0b,#d97706);">
+        📋
+      </div>
+
+      <span class="inline-block text-sm font-bold px-4 py-1 rounded-full mb-4"
+            style="background:#fde68a;color:#92400e;">✏️ INSCRIPCIONES ABIERTAS 2026</span>
+
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" style="color:#92400e;">
+        Ficha de Inscripción
+      </h2>
+
+      <p class="text-base sm:text-lg mb-8" style="color:#78350f;">
+        Completá el formulario con los datos del niño/a y del tutor/a a cargo.
+        Nos comunicaremos a la brevedad para confirmar el turno.
+      </p>
+
+      <!-- Destacados -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+        <div class="rounded-2xl p-4 border" style="background:#fef3c7;border-color:#fde68a;">
+          <div class="text-2xl mb-2">⚡</div>
+          <div class="font-semibold text-sm" style="color:#92400e;">Rápido</div>
+          <div class="text-xs mt-1" style="color:#b45309;">Solo 2 minutos</div>
+        </div>
+        <div class="rounded-2xl p-4 border" style="background:#fef3c7;border-color:#fde68a;">
+          <div class="text-2xl mb-2">🔒</div>
+          <div class="font-semibold text-sm" style="color:#92400e;">Seguro</div>
+          <div class="text-xs mt-1" style="color:#b45309;">Datos protegidos</div>
+        </div>
+        <div class="rounded-2xl p-4 border" style="background:#fef3c7;border-color:#fde68a;">
+          <div class="text-2xl mb-2">📲</div>
+          <div class="font-semibold text-sm" style="color:#92400e;">Te contactamos</div>
+          <div class="text-xs mt-1" style="color:#b45309;">A la brevedad</div>
+        </div>
+      </div>
+
+      <!-- Botón principal -->
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSd57I-dSwjIoat7Fl62i2eyNpU_7EywVzpHQwwrxPH_2_QDRw/viewform"
+         target="_blank" rel="noopener"
+         class="inline-flex items-center justify-center gap-3 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all active:scale-95 w-full sm:w-auto"
+         style="background:linear-gradient(135deg,#d97706,#92400e);box-shadow:0 8px 24px rgba(217,119,6,0.35);">
+        <i class="fas fa-clipboard-list text-xl"></i> Completar ficha de inscripción
+      </a>
+
+      <p class="mt-4 text-sm" style="color:#b45309;">
+        ¿Tenés dudas antes de inscribirte? <a href="https://wa.me/541127325400" target="_blank" rel="noopener" class="font-semibold underline" style="color:#d97706;">Consultanos por WhatsApp</a>
+      </p>
+
+    </div>
+  </div>
+</section>
+
+<!-- wave inscripción → contacto -->
+<div style="margin-top:-2px;line-height:0;background:#fffbeb;">
+  <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;">
+    <path d="M0,20 C480,80 960,0 1440,50 L1440,80 L0,80 Z" fill="#92400e"/>
+  </svg>
+</div>
+
+<!-- ═══════════════════ CONTACTO ═══════════════════ -->
+<section id="contacto" class="py-20 md:py-32 text-white section-warm">
+  <div class="container mx-auto px-6 sm:px-12 text-center">
+    <div class="max-w-3xl mx-auto">
+
+      <h2 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-4" style="color:#fde68a;">
+        ¿Listos para el cambio?
+      </h2>
+      <p class="text-base sm:text-xl mb-10 max-w-xl mx-auto" style="color:rgba(255,255,255,0.8);">
+        El primer paso es una consulta. Sin compromiso, contanos qué le pasa a tu hijo y buscamos la mejor solución juntos.
+      </p>
+
+      <div class="rounded-3xl p-6 sm:p-10 text-left border"
+           style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);">
+        <h3 class="text-xl sm:text-2xl font-bold mb-6 text-center">Envianos un mensaje</h3>
+        <div class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium mb-1" style="color:rgba(255,255,255,0.8);">Nombre</label>
+              <input type="text" id="form-nombre" placeholder="Tu nombre"
+                     class="w-full px-4 py-3 rounded-xl border text-white placeholder-white/50 focus:outline-none transition"
+                     style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.3);">
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1" style="color:rgba(255,255,255,0.8);">Teléfono (opcional)</label>
+              <input type="tel" id="form-telefono" placeholder="Tu número"
+                     class="w-full px-4 py-3 rounded-xl border text-white placeholder-white/50 focus:outline-none transition"
+                     style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.3);">
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1" style="color:rgba(255,255,255,0.8);">¿Cómo puedo ayudarte?</label>
+            <textarea id="form-mensaje" rows="4" placeholder="Contanos brevemente la situación de tu hijo..."
+                      class="w-full px-4 py-3 rounded-xl border text-white placeholder-white/50 focus:outline-none transition resize-none"
+                      style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.3);"></textarea>
+          </div>
+          <button onclick="enviarFormulario()"
+                  class="w-full flex items-center justify-center gap-2 text-white px-6 py-4 rounded-2xl font-bold text-lg transition-all active:scale-95"
+                  style="background:#25D366;">
+            <i class="fab fa-whatsapp text-xl"></i> Enviar por WhatsApp
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer class="text-white py-12"
+        style="background:#451a03;padding-bottom:calc(3rem + env(safe-area-inset-bottom));">
+  <div class="container mx-auto px-6 sm:px-12 text-center">
+    <div class="text-2xl sm:text-3xl mb-4 font-bold" style="color:#fde68a;">
+      <i class="fas fa-brain mr-3"></i>Aprende Con Mente
+    </div>
+    <p class="mb-1 text-sm font-semibold" style="color:rgba(255,255,255,0.8);">Elisabet Escobar · MP 286478</p>
+    <p class="mb-4 text-sm" style="color:rgba(255,255,255,0.6);">Psicopedagogía Neurofuncional · Método N.E.U.R.O-A</p>
+    <p class="mb-8 text-sm" style="color:rgba(255,255,255,0.5);">📍 Villa Maipú – San Martín</p>
+    <div class="flex justify-center space-x-6 text-2xl mb-8">
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"
+         class="transition hover:opacity-70" style="color:#fde68a;"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"
+         class="transition hover:opacity-70" style="color:#fde68a;"><i class="fab fa-facebook"></i></a>
+      <a href="https://wa.me/541127325400" target="_blank" rel="noopener" aria-label="WhatsApp"
+         class="transition hover:opacity-70" style="color:#25D366;"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p class="text-sm" style="color:rgba(255,255,255,0.3);">
+      © 2026 Aprende Con Mente Pedagogía Integral. Todos los derechos reservados.
+    </p>
+  </div>
+</footer>
+
+<!-- ═══════════════════ CHATBOT FLOTANTE ═══════════════════ -->
+<div style="position:fixed;bottom:calc(24px + env(safe-area-inset-bottom));right:24px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:12px;">
+
+  <!-- Ventana del chat -->
+  <div id="chat-box">
+    <!-- Header -->
+    <div style="background:linear-gradient(135deg,#d97706,#92400e);padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div style="width:38px;height:38px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;">🧠</div>
+        <div>
+          <div style="color:#fff;font-weight:700;font-size:14px;font-family:'Poppins',sans-serif;">Aprende con Mente</div>
+          <div style="color:rgba(255,255,255,0.8);font-size:11px;font-family:'Poppins',sans-serif;">Respondemos por WhatsApp</div>
+        </div>
+      </div>
+      <button onclick="cerrarChat()"
+              style="background:none;border:none;color:rgba(255,255,255,0.8);font-size:20px;cursor:pointer;padding:4px;line-height:1;"
+              aria-label="Cerrar chat">✕</button>
+    </div>
+    <!-- Mensajes -->
+    <div id="chat-messages"></div>
+    <!-- Input -->
+    <div id="chat-input-area">
+      <input id="chat-input" type="text" placeholder="Escribí tu respuesta..."
+             autocomplete="off" onkeydown="if(event.key==='Enter') enviarRespuesta()">
+      <button id="chat-send" onclick="enviarRespuesta()" aria-label="Enviar">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Botón toggle -->
+  <button id="chat-toggle" onclick="toggleChat()" aria-label="Abrir chat de consulta">
+    <i id="chat-icon" class="fab fa-whatsapp" style="font-size:32px;color:#fff;"></i>
+  </button>
+
+</div>
+
+<!-- ═══════════════════ SCRIPTS ═══════════════════ -->
+<script>
+// ── Menú hamburguesa ──────────────────────────────────────────
+const menuBtn    = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const menuIcon   = document.getElementById('menu-icon');
+
+menuBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
+  menuIcon.classList.toggle('fa-bars');
+  menuIcon.classList.toggle('fa-times');
+});
+
+document.querySelectorAll('.mobile-link').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+    menuIcon.classList.add('fa-bars');
+    menuIcon.classList.remove('fa-times');
+  });
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+  });
+});
+
+// ── Formulario de contacto ────────────────────────────────────
+function enviarFormulario() {
+  const nombre   = document.getElementById('form-nombre').value.trim();
+  const telefono = document.getElementById('form-telefono').value.trim();
+  const mensaje  = document.getElementById('form-mensaje').value.trim();
+  if (!nombre || !mensaje) {
+    alert('Por favor completá tu nombre y el mensaje.');
+    return;
+  }
+  const texto = `Hola Elisabet! Soy ${nombre}.${telefono ? ' Mi teléfono es ' + telefono + '.' : ''} Quería consultar: ${mensaje}`;
+  window.open('https://wa.me/541127325400?text=' + encodeURIComponent(texto), '_blank');
+}
+
+// ── Chatbot ───────────────────────────────────────────────────
+const PREGUNTAS = [
+  '👋 ¡Hola! Soy el asistente de Aprende con Mente.\n\nPara ayudarte mejor, te hago unas preguntas rápidas.\n\n¿Cuál es tu nombre?',
+  '¿Cuál es el nombre y apellido del niño/a?',
+  '¿Cuál es la fecha de nacimiento del niño/a?\n(ej: 15/03/2018)',
+  '¿Querés contarnos algo sobre tu consulta?\n(opcional, podés escribir "no" para saltear)'
+];
+const CLAVES = ['padre', 'nino', 'fechaNac', 'consulta'];
+
+let paso       = 0;
+let respuestas = {};
+let chatAbierto = false;
+
+function toggleChat() {
+  chatAbierto = !chatAbierto;
+  const box  = document.getElementById('chat-box');
+  const icon = document.getElementById('chat-icon');
+  if (chatAbierto) {
+    box.style.display = 'block';
+    icon.className = 'fas fa-times';
+    icon.style.fontSize = '26px';
+    if (paso === 0) {
+      setTimeout(() => agregarBot(PREGUNTAS[0]), 300);
+      paso = 1;
+    }
+    setTimeout(() => document.getElementById('chat-input').focus(), 400);
+  } else {
+    box.style.display = 'none';
+    icon.className = 'fab fa-whatsapp';
+    icon.style.fontSize = '32px';
+  }
+}
+
+function cerrarChat() {
+  chatAbierto = false;
+  document.getElementById('chat-box').style.display = 'none';
+  const icon = document.getElementById('chat-icon');
+  icon.className = 'fab fa-whatsapp';
+  icon.style.fontSize = '32px';
+}
+
+function agregarBot(texto) {
+  const msgs = document.getElementById('chat-messages');
+  const div  = document.createElement('div');
+  div.className = 'msg-bot';
+  div.textContent = texto;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function agregarUser(texto) {
+  const msgs = document.getElementById('chat-messages');
+  const div  = document.createElement('div');
+  div.className = 'msg-user';
+  div.textContent = texto;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function enviarRespuesta() {
+  const input = document.getElementById('chat-input');
+  const valor = input.value.trim();
+  if (!valor) return;
+  input.value = '';
+
+  agregarUser(valor);
+  respuestas[CLAVES[paso - 1]] = valor;
+
+  if (paso < PREGUNTAS.length) {
+    const siguientePregunta = PREGUNTAS[paso];
+    paso++;
+    setTimeout(() => agregarBot(siguientePregunta), 500);
+  } else {
+    // Todas las respuestas → armar mensaje y abrir WhatsApp
+    setTimeout(() => {
+      agregarBot('¡Perfecto! Te estoy enviando a WhatsApp ahora... 🚀');
+      setTimeout(() => {
+        const skipConsulta = !respuestas.consulta ||
+          ['no','no sé','nose','nada','-'].includes(respuestas.consulta.toLowerCase().trim());
+        const consultaTexto = skipConsulta
+          ? ''
+          : '\n📝 *Consulta:* ' + respuestas.consulta;
+
+        const texto =
+          'Hola Elisabet! Me contacto desde la web.\n\n' +
+          '👤 *Padre/Madre:* ' + respuestas.padre + '\n' +
+          '👦 *Niño/a:* '      + respuestas.nino  + '\n' +
+          '🎂 *Fecha de nacimiento:* ' + respuestas.fechaNac +
+          consultaTexto + '\n\n' +
+          'Quiero hacer una consulta.';
+
+        window.open('https://wa.me/541127325400?text=' + encodeURIComponent(texto), '_blank');
+
+        // Resetear para la próxima vez
+        setTimeout(() => {
+          cerrarChat();
+          paso = 0;
+          respuestas = {};
+          document.getElementById('chat-messages').innerHTML = '';
+        }, 500);
+
+      }, 1200);
+    }, 500);
+  }
+}
+</script>
+</body>
+</html>
