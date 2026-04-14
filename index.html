@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elisabet Escobar | Psicopedagogía Neurofuncional en San Martín</title>
+  <meta name="description" content="Psicopedagoga en Villa Maipú, San Martín. Acompañamiento en aprendizaje, alfabetización inicial, autismo e inclusión educativa con enfoque neurofuncional.">
+  <meta name="keywords" content="psicopedagoga san martin, alfabetizacion inicial, autismo, inclusion educativa, metodo neuro-a">
+  <meta name="theme-color" content="#c2410c">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Aprende con Mente | Psicopedagogía Neurofuncional">
+  <meta property="og:description" content="Acompañamiento psicopedagógico para niños y familias con dificultades de aprendizaje, alfabetización e inclusión escolar.">
+  <meta property="og:image" content="https://aprendeconmente.github.io/web/images/logo.png">
+  <link rel="canonical" href="https://aprendeconmente.github.io/web/">
+  <link rel="icon" type="image/png" href="https://aprendeconmente.github.io/web/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#fffaf2;--bg2:#fff0d8;--card:rgba(255,255,255,.82);--text:#4a2207;--soft:#7c3a0c;--muted:#9a5a28;--brand:#c2410c;--brand2:#ea580c;--green:#25d366;--dark:#3b1806;--line:rgba(194,65,12,.12);--shadow:0 18px 45px rgba(74,34,7,.12);--radius:24px;--container:1160px;--header:82px}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:"Source Sans 3",sans-serif;color:var(--text);background:radial-gradient(circle at top left,rgba(245,158,11,.18),transparent 20%),radial-gradient(circle at bottom right,rgba(234,88,12,.08),transparent 20%),var(--bg);line-height:1.55}
+    img{display:block;max-width:100%;height:auto} a{text-decoration:none;color:inherit} button,input,textarea{font:inherit} input,textarea{font-size:16px}
+    .container{width:min(var(--container),calc(100% - 32px));margin:0 auto}.section{padding:84px 0}.dark{background:linear-gradient(135deg,#9a3412 0%,#c2410c 45%,#ea580c 100%);color:#fff}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.78);border:1px solid var(--line);color:var(--brand);font-size:14px;font-weight:800}.dark .eyebrow{background:rgba(255,255,255,.12);color:#ffe2ad;border-color:rgba(255,255,255,.14)}
+    .title{text-align:center;max-width:760px;margin:0 auto 42px}.title h2{margin:16px 0 12px;font-family:"Montserrat",sans-serif;font-size:clamp(34px,5vw,54px);line-height:1.06;letter-spacing:-.03em}.title p{margin:0;font-size:clamp(18px,2vw,22px);color:var(--muted)}.dark .title p{color:rgba(255,255,255,.82)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:14px 24px;border:0;border-radius:18px;font-weight:800;cursor:pointer;transition:.2s transform,.2s box-shadow}.btn:hover{transform:translateY(-2px)}.btn-primary{background:linear-gradient(135deg,var(--green),#1fa955);color:#fff;box-shadow:0 12px 30px rgba(37,211,102,.24)}.btn-secondary{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;box-shadow:0 12px 30px rgba(194,65,12,.22)}.btn-outline{background:transparent;border:2px solid rgba(194,65,12,.2);color:var(--brand)}
+    .site-header{position:sticky;top:0;z-index:1000;background:rgba(255,250,242,.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(194,65,12,.08)}.nav{min-height:var(--header);display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:inline-flex;align-items:center;gap:12px}.brand img{width:42px;height:42px;object-fit:contain;object-position:center;border-radius:12px;flex-shrink:0}.brand b{display:block;font-family:"Montserrat",sans-serif;color:var(--brand);line-height:1}.brand span{display:block;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+    .desktop-nav{display:flex;align-items:center;gap:20px;list-style:none;padding:0;margin:0}.desktop-nav a,.mobile-nav a{font-weight:700;color:var(--soft)}.desktop-nav a:hover,.mobile-nav a:hover{color:var(--brand)}
+    .menu-toggle{display:none;width:48px;height:48px;border:0;border-radius:14px;background:transparent;color:var(--brand);font-size:30px;cursor:pointer}.mobile-menu{display:none;border-top:1px solid rgba(194,65,12,.08);background:rgba(255,250,242,.96)}.mobile-menu.open{display:block}.mobile-nav{list-style:none;margin:0;padding:10px 0 0}.mobile-nav li+li{border-top:1px solid rgba(194,65,12,.08)}.mobile-nav a{display:block;padding:15px 0}.mobile-menu .btn{width:100%;margin:16px 0 22px}
+    .hero{padding:46px 0 80px;background:linear-gradient(135deg,#fff8ed 0%,#ffeccd 50%,#ffd18b 100%);overflow:hidden}.hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);gap:34px;align-items:center;min-height:calc(100vh - var(--header) - 40px)}
+    .hero h1{margin:18px 0 14px;font-family:"Montserrat",sans-serif;font-size:clamp(42px,7vw,78px);line-height:.98;letter-spacing:-.04em;color:#9a3412}.hero h1 span{display:block;color:var(--brand2)}.lead{max-width:680px;margin:0 0 22px;font-size:clamp(19px,2.4vw,24px);color:var(--soft)}
+    .proofs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 24px}.proof{padding:16px;border-radius:20px;background:rgba(255,255,255,.7);border:1px solid var(--line);box-shadow:var(--shadow)}.proof strong{display:block;font-family:"Montserrat",sans-serif;font-size:24px;color:var(--brand);line-height:1;margin-bottom:6px}.proof span{font-size:14px;font-weight:700;color:var(--muted)}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:16px}.hero-note{font-size:15px;color:var(--muted);font-weight:700}
+    .card{padding:28px;border-radius:28px;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);backdrop-filter:blur(10px)}.hero-card h2,.service-card h3,.faq-card h3{margin:0 0 10px;font-family:"Montserrat",sans-serif;color:var(--brand);line-height:1.12}
+    .hero-card p,.service-card p,.faq-card p{margin:0;color:var(--soft)}.hero-card img{border-radius:22px;margin-bottom:18px}.quick{display:grid;gap:12px;margin:18px 0}.quick div{display:flex;gap:12px;padding:14px 16px;border-radius:18px;background:#fff5e8;font-weight:700}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}.service-icon{width:76px;height:76px;border-radius:22px;display:inline-flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:34px;background:linear-gradient(135deg,#ffd49a,#ffedd0)}
+    .price{display:inline-flex;margin-top:18px;padding:10px 14px;border-radius:999px;background:#fff0d7;color:var(--brand);font-weight:800}.price small{margin-left:6px;color:var(--muted);font-weight:700}
+    .banner{margin-top:24px;padding:24px 26px;border-radius:26px;background:linear-gradient(135deg,#fff0d7,#ffe1aa);border:1px solid var(--line);box-shadow:var(--shadow);display:flex;align-items:center;justify-content:space-between;gap:18px}.banner strong{display:block;font-family:"Montserrat",sans-serif;font-size:24px;color:var(--brand)}
+    .list{list-style:none;padding:0;margin:0;display:grid;gap:14px}.list li{display:flex;gap:12px;align-items:flex-start;font-size:18px;font-weight:700}.list li span:first-child{font-size:22px;line-height:1}
+    .about{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);gap:34px;align-items:center}.about h2{margin:18px 0 12px;font-family:"Montserrat",sans-serif;font-size:clamp(36px,5vw,58px);line-height:1.02}.about p{margin:0 0 22px;font-size:20px;color:rgba(255,255,255,.82)}
+    .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}.metric{padding:20px 16px;border-radius:22px;background:rgba(255,255,255,.12);text-align:center}.metric strong{display:block;font-family:"Montserrat",sans-serif;font-size:clamp(28px,4vw,44px);color:#ffe6b0;line-height:1;margin-bottom:6px}.metric span{font-weight:700;color:rgba(255,255,255,.82)}
+    .stamp{margin-top:14px;padding:14px 16px;border-radius:20px;background:rgba(255,240,215,.96);color:var(--brand);font-weight:800}.method-grid,.testimonials,.faq-grid,.chips{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.method{padding:24px;border-radius:24px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.14);text-align:center}.method .emoji{display:block;font-size:36px;margin-bottom:10px}.method h3{margin:0 0 10px;font-family:"Montserrat",sans-serif}.method p{margin:0;color:rgba(255,255,255,.78)}
+    .testimonial .head{display:flex;align-items:center;gap:14px;margin-bottom:12px}.avatar{width:58px;height:58px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--brand2),var(--brand));color:#fff;font-family:"Montserrat",sans-serif;font-weight:800}.meta strong{display:block;color:var(--brand);font-size:18px}.meta span{font-size:14px;font-weight:700;color:var(--muted)}.stars{margin-bottom:12px;color:#f59e0b;letter-spacing:1px}.testimonial p{font-size:18px}
+    .faq-card details{border-top:1px solid rgba(194,65,12,.08);padding-top:16px;margin-top:16px}.faq-card details:first-of-type{border-top:0;padding-top:0;margin-top:0}.faq-card summary{cursor:pointer;list-style:none;font-family:"Montserrat",sans-serif;font-size:18px;color:var(--brand);font-weight:700}.faq-card summary::-webkit-details-marker{display:none}
+    .contact{max-width:980px;margin:0 auto;padding:34px;border-radius:32px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);box-shadow:var(--shadow)}.contact-top{text-align:center;margin-bottom:24px}.contact-top h2{margin:16px 0 14px;font-family:"Montserrat",sans-serif;font-size:clamp(34px,6vw,60px);line-height:1.02;color:#ffedc2}.contact-top p{max-width:720px;margin:0 auto 10px;font-size:20px;color:rgba(255,255,255,.82)}.contact-phone{font-size:20px;font-weight:800;color:#fff0c7}
+    .form{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.field{display:grid;gap:8px}.full{grid-column:1/-1}.field label{font-size:14px;font-weight:700;color:rgba(255,255,255,.88)}.field input,.field textarea{width:100%;padding:15px 16px;border-radius:16px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.14);color:#fff;outline:none}.field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,.58)}.field textarea{min-height:140px;resize:vertical}.chip{padding:16px;border-radius:18px;background:rgba(255,255,255,.1);text-align:center;color:rgba(255,255,255,.9);font-weight:700}
+    .sticky{position:sticky;bottom:0;z-index:998;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(59,24,6,.94);backdrop-filter:blur(14px)}.sticky-inner{width:min(var(--container),calc(100% - 16px));margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px}.sticky-copy{font-weight:700;color:rgba(255,255,255,.86)}.sticky-copy strong{display:block;font-family:"Montserrat",sans-serif;font-size:18px;color:#fff2bf}
+    .footer{padding:44px 0 calc(44px + env(safe-area-inset-bottom));text-align:center;background:var(--dark);color:#fff}.footer-brand{display:inline-flex;align-items:center;gap:10px;margin-bottom:14px;font-family:"Montserrat",sans-serif;font-size:30px;font-weight:800;color:#ffdd9f}.footer-brand img{width:36px;height:36px;object-fit:contain;object-position:center;border-radius:10px;flex-shrink:0}.footer p{margin:0 0 8px;color:rgba(255,255,255,.76)}.footer-copy{font-size:14px;color:rgba(255,255,255,.44)}
+    .chat-widget{position:fixed;right:18px;bottom:calc(88px + env(safe-area-inset-bottom));z-index:999;display:flex;flex-direction:column;align-items:flex-end;gap:12px}.chat-box{display:none;width:330px;max-width:calc(100vw - 26px);overflow:hidden;border-radius:22px;background:#fff;box-shadow:0 18px 50px rgba(59,24,6,.22)}.chat-box.open{display:block}.chat-header{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 16px;background:linear-gradient(135deg,#9a3412 0%,#c2410c 45%,#ea580c 100%)}.chat-header-main{display:flex;align-items:center;gap:10px}.chat-avatar{width:40px;height:40px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,.18);color:#fff}.chat-title{color:#fff;font-size:14px;font-weight:800}.chat-subtitle{font-size:11px;color:rgba(255,255,255,.8)}.chat-close,.chat-send{border:0;cursor:pointer}.chat-close{background:transparent;color:rgba(255,255,255,.88);font-size:22px;padding:0}.chat-messages{display:flex;flex-direction:column;gap:10px;max-height:300px;overflow-y:auto;padding:16px;background:#fff8f0}.msg-bot,.msg-user{max-width:88%;padding:11px 14px;font-size:14px;white-space:pre-line}.msg-bot{align-self:flex-start;border-radius:16px 16px 16px 4px;background:#ffe9c5;color:var(--text)}.msg-user{align-self:flex-end;border-radius:16px 16px 4px 16px;background:var(--brand);color:#fff}.chat-input-area{display:flex;gap:8px;padding:12px;background:#fff;border-top:1px solid rgba(194,65,12,.08)}.chat-input{flex:1;border:1px solid rgba(194,65,12,.14);border-radius:12px;padding:10px 12px;background:#fff8ef;color:var(--text)}.chat-send{width:44px;height:44px;border-radius:12px;background:var(--brand);color:#fff;font-size:18px}.chat-toggle{width:64px;height:64px;border:0;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--green),#1fa955);color:#fff;font-size:30px;box-shadow:0 18px 35px rgba(37,211,102,.3);cursor:pointer;animation:pulse 2.2s infinite}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease}.reveal.visible{opacity:1;transform:none}@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.44)}70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+    @media (max-width:1100px){.hero-grid,.about,.grid-2,.grid-3,.method-grid,.testimonials,.faq-grid,.chips{grid-template-columns:1fr}.proofs,.metrics{grid-template-columns:repeat(3,1fr)}}
+    @media (max-width:900px){.desktop-nav,.header-cta{display:none}.menu-toggle{display:inline-flex}.sticky-inner{flex-direction:column;align-items:stretch}.sticky-inner .btn{width:100%}.hero-grid{min-height:auto;padding-top:8px}}
+    @media (max-width:768px){.section{padding:70px 0}.hero{padding:28px 0 56px}.proofs,.metrics,.form{grid-template-columns:1fr}.hero-actions,.banner,.chips{grid-template-columns:1fr;display:grid}.hero-actions .btn,.banner .btn{width:100%}.card,.contact{padding:22px}.title{margin-bottom:30px}.hero h1{font-size:clamp(34px,11vw,52px)}.lead{font-size:18px}.proof{padding:14px}.proof strong{font-size:22px}.nav{min-height:72px}.brand img{width:38px;height:38px}.brand b{font-size:16px}.brand span{font-size:10px}.sticky{padding:10px 12px calc(10px + env(safe-area-inset-bottom))}.sticky-copy{font-size:14px}.sticky-copy strong{font-size:16px}.chat-widget{right:14px;bottom:calc(104px + env(safe-area-inset-bottom))}.chat-box{width:min(330px,calc(100vw - 20px))}}
+    @media (max-width:520px){.container{width:min(var(--container),calc(100% - 22px))}.hero-actions{gap:10px}.hero-note{font-size:14px}.banner{padding:20px 18px}.banner strong{font-size:20px}.contact-top p,.about p{font-size:18px}.field input,.field textarea{padding:14px}.chat-widget{right:10px;bottom:calc(110px + env(safe-area-inset-bottom))}.chat-toggle{width:58px;height:58px;font-size:26px}.chat-input-area{padding:10px}.chat-send{width:42px;height:42px}.mobile-menu .btn{margin-bottom:18px}}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+  </style>
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"EducationalOrganization","name":"Aprende con Mente","url":"https://aprendeconmente.github.io/web/","logo":"https://aprendeconmente.github.io/web/images/logo.png","telephone":"+54 9 11 2732-5400","address":{"@type":"PostalAddress","addressLocality":"Villa Maipú","addressRegion":"San Martín","addressCountry":"AR"},"founder":{"@type":"Person","name":"Elisabet Escobar"},"description":"Acompañamiento psicopedagógico neurofuncional, alfabetización inicial, autismo e inclusión educativa."}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#inicio" class="brand" aria-label="Ir al inicio">
+        <img src="https://aprendeconmente.github.io/web/images/logo.png" alt="Logo Aprende con Mente">
+        <div><b>Aprende con Mente</b><span>Psicopedagogía Neurofuncional</span></div>
+      </a>
+      <ul class="desktop-nav" aria-label="Navegación principal">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#taller">Taller</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+        <li><a href="#preguntas">Preguntas</a></li>
+        <li><a href="https://neuroplayar.github.io/web/" target="_blank" rel="noopener noreferrer">Neuro Play</a></li>
+      </ul>
+      <a class="btn btn-primary header-cta" href="https://wa.me/5491127325400?text=Hola%20Elisabet%2C%20quiero%20reservar%20una%20consulta%20inicial" target="_blank" rel="noopener noreferrer">Reservar consulta</a>
+      <button id="menuBtn" class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">☰</button>
+    </div>
+    <div id="mobileMenu" class="mobile-menu">
+      <div class="container">
+        <ul class="mobile-nav" aria-label="Navegación móvil">
+          <li><a class="mobile-link" href="#inicio">Inicio</a></li>
+          <li><a class="mobile-link" href="#servicios">Servicios</a></li>
+          <li><a class="mobile-link" href="#taller">Taller</a></li>
+          <li><a class="mobile-link" href="#sobre-mi">Sobre mí</a></li>
+          <li><a class="mobile-link" href="#testimonios">Testimonios</a></li>
+          <li><a class="mobile-link" href="#preguntas">Preguntas</a></li>
+          <li><a class="mobile-link" href="https://neuroplayar.github.io/web/" target="_blank" rel="noopener noreferrer">Neuro Play</a></li>
+        </ul>
+        <a class="btn btn-primary" href="https://wa.me/5491127325400?text=Hola%20Elisabet%2C%20quiero%20reservar%20una%20consulta%20inicial" target="_blank" rel="noopener noreferrer">Hablar por WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">Atención personalizada en Villa Maipú, San Martín</div>
+          <h1>Aprendizaje real<span>desde la Neurofunción</span></h1>
+          <p class="lead">Acompaño a niños y familias que necesitan respuestas concretas frente a dificultades de aprendizaje, alfabetización inicial, autismo e inclusión educativa, con un enfoque neurofuncional y humano.</p>
+          <div class="proofs">
+            <div class="proof"><strong>15+</strong><span>Años acompañando familias</span></div>
+            <div class="proof"><strong>300+</strong><span>Niños atendidos</span></div>
+            <div class="proof"><strong>1° paso</strong><span>Consulta inicial por WhatsApp</span></div>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/5491127325400?text=Hola%20Elisabet%2C%20quiero%20hacer%20una%20consulta%20inicial" target="_blank" rel="noopener noreferrer">Quiero una consulta ahora</a>
+            <a class="btn btn-secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSd57I-dSwjIoat7Fl62i2eyNpU_7EywVzpHQwwrxPH_2_QDRw/viewform" target="_blank" rel="noopener noreferrer">Completar ficha de inscripción</a>
+            <button class="btn btn-outline" type="button" data-scroll="#servicios">Ver cómo podemos ayudar</button>
+            <a class="btn btn-outline" href="https://neuroplayar.github.io/web/" target="_blank" rel="noopener noreferrer">Ver Neuro Play</a>
+          </div>
+          <div class="hero-note">Respuesta por WhatsApp, cupos limitados y seguimiento personalizado.</div>
+        </div>
+        <aside class="card hero-card reveal">
+          <img src="https://aprendeconmente.github.io/web/images/manoconlapiz.png" alt="Elisabet Escobar, psicopedagoga neurofuncional" loading="eager" decoding="async">
+          <h2>Elisabet Escobar</h2>
+          <p>Psicopedagoga · Diplomada en Autismo · Creadora del Método N.E.U.R.O-A · MP 286478</p>
+          <div class="quick">
+            <div><span>🧠</span><span>Intervención con enfoque en atención, memoria y concentración como base del aprendizaje</span></div>
+            <div><span>📚</span><span>Estimulación de procesos cognitivos para el desarrollo de la alfabetización</span></div>
+            <div><span>🤝</span><span>Acompañamiento articulado con familia y escuela desde una mirada integral</span></div>
+          </div>
+          <a class="btn btn-secondary" href="https://wa.me/5491127325400?text=Hola%20Elisabet%2C%20quiero%20recibir%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer">Pedir más información</a>
+        </aside>
+      </div>
+    </section>
+
+    <section id="servicios" class="section">
+      <div class="container">
+        <div class="title reveal">
+          <div class="eyebrow">Servicios pensados para avanzar de verdad</div>
+          <h2>Elegí el acompañamiento que mejor se adapte a tu hijo</h2>
+          <p>Intervenciones personalizadas, objetivos claros y estrategias concretas para mejorar el aprendizaje, la confianza y el desempeño escolar.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card service-card reveal">
+            <div class="service-icon">📘</div>
+            <h3>Acompañamiento psicopedagógico</h3>
+            <p>Sesiones individuales para trabajar dificultades de aprendizaje, atención, memoria, funciones cognitivas y alfabetización inicial desde el origen del problema.</p>
+            <div class="price">ARS 30.000 <small>por sesión de 45 min</small></div>
+          </article>
+          <article class="card service-card reveal">
+            <div class="service-icon">🌟</div>
+            <h3>Grupos de estimulación y alfabetización</h3>
+            <p>Espacios reducidos para potenciar lectura, escritura, lenguaje, conducta y habilidades previas al aprendizaje con recursos lúdicos y estructurados.</p>
+            <div class="price">ARS 60.000 <small>programa grupal</small></div>
+          </article>
+          <article class="card service-card reveal">
+            <div class="service-icon">🏫</div>
+            <h3>Inclusión educativa</h3>
+            <p>Orientación a docentes, adaptaciones pedagógicas y seguimiento escolar para que la inclusión sea real, posible y sostenida en el tiempo.</p>
+            <div class="price">ARS 35.000 <small>por sesión de 45 min</small></div>
+          </article>
+        </div>
+        <div class="banner reveal">
+          <div><strong>No esperes a que la dificultad crezca</strong><span>Una consulta a tiempo puede cambiar el recorrido escolar y emocional de tu hijo.</span></div>
+          <a class="btn btn-primary" href="https://wa.me/5491127325400?text=Hola%20Elisabet%2C%20quiero%20consultar%20por%20los%20servicios" target="_blank" rel="noopener noreferrer">Consultar sin compromiso</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="taller" class="section">
+      <div class="container">
+        <div class="title reveal">
+          <div class="eyebrow">Inscripciones abiertas 2026</div>
+          <h2>Taller de Pre-Alfabetización y Alfabetización Inicial</h2>
+          <p>Una propuesta cálida, guiada y efectiva para que aprender a leer y escribir sea una experiencia positiva y significativa.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card reveal">
+            <h3>¿Qué trabajamos en el taller?</h3>
+            <ul class="list">
+              <li><span>🔤</span><span>Reconocimiento de letras, sonidos y conciencia fonológica</span></li>
+              <li><span>✍️</span><span>Escritura inicial con trazos y organización</span></li>
+              <li><span>📖</span><span>Primeras lecturas y comprensión de palabras</span></li>
+              <li><span>🎲</span><span>Actividades multisensoriales, lúdicas y adaptadas</span></li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <h3>¿Por qué tantas familias lo eligen?</h3>
+            <ul class="list">
+              <li><span>👥</span><span>Grupos reducidos con máximo 4 niños</span></li>
+              <li><span>👶</span><span>Disponible desde los 4 años</span></li>
+              <li><span>🎨</span><span>Materiales y recursos incluidos</span></li>
+              <li><span>📍</span><span>Atención presencial en Villa Maipú, San Martín</span></li>
+            </ul>
+            <div style="margin-top:22px">
+              <a class="btn btn-secondary" href="https://wa.me/5491127325400?text=Hola%20Elisabet%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20taller%20de%20alfabetizaci%C3%B3n" target="_blank" rel="noopener noreferrer">Consultar por el taller</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre-mi" class="section dark">
+      <div class="container">
+        <div class="about">
+          <div class="reveal">
+            <div class="eyebrow">Sobre mí</div>
+            <h2>Trabajo para que cada niño encuentre la forma de aprender</h2>
+            <p>Mi enfoque combina formación psicopedagógica, experiencia clínica y acompañamiento cercano a familias y escuelas para intervenir con claridad, sensibilidad y estrategia.</p>
+            <ul class="list">
+              <li><span>🎓</span><span>Psicopedagoga y diplomada en Autismo</span></li>
+              <li><span>🧩</span><span>Creadora del Método N.E.U.R.O-A</span></li>
+              <li><span>🏠</span><span>Orientación a familias para sostener avances fuera del consultorio</span></li>
+              <li><span>🏫</span><span>Trabajo conjunto con escuelas para acompañar la inclusión</span></li>
+            </ul>
+            <div class="metrics">
+              <div class="metric"><strong>300+</strong><span>niños acompañados</span></div>
+              <div class="metric"><strong>15+</strong><span>años de experiencia</span></div>
+              <div class="metric"><strong>100%</strong><span>enfoque personalizado</span></div>
+            </div>
+          </div>
+          <div class="reveal">
+            <div class="card" style="background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.14)">
+              <img src="https://aprendeconmente.github.io/web/images/manoconlapiz.png" alt="Aprende con Mente - acompañamiento psicopedagógico" loading="lazy" decoding="async" style="border-radius:22px">
+              <div class="stamp">"El aprendizaje ocurre cuando se generan las condiciones adecuadas."</div>
+            </div>
+          </div>
+        </div>
+        <div class="method-grid" style="margin-top:28px">
+          <article class="method reveal"><span class="emoji">🎯</span><h3>Atención</h3><p>Fortalecemos foco, autorregulación y capacidad de sostener tareas.</p></article>
+          <article class="method reveal"><span class="emoji">💾</span><h3>Memoria</h3><p>Trabajamos retención, evocación y estrategias para aprender mejor.</p></article>
+          <article class="method reveal"><span class="emoji">📈</span><h3>Funciones del aprendizaje</h3><p>Intervenimos en las bases cognitivas que sostienen avances duraderos.</p></article>
+        </div>
+      </div>
+    </section>
+    <section id="testimonios" class="section">
+      <div class="container">
+        <div class="title reveal">
+          <div class="eyebrow">Confianza real</div>
+          <h2>Lo que dicen las familias que ya dieron el primer paso</h2>
+          <p>Más que mejores notas: buscan seguridad, autonomía y una forma de aprender que realmente funcione.</p>
+        </div>
+        <div class="testimonials">
+          <article class="card testimonial reveal">
+            <div class="head"><div class="avatar">CP</div><div class="meta"><strong>Camila P.</strong><span>Mamá de Mateo, 10 años</span></div></div>
+            <div class="stars">★★★★★</div>
+            <p>"En pocos meses vimos un cambio enorme. No solo mejoró en matemáticas: recuperó la confianza y volvió a sentirse capaz."</p>
+          </article>
+          <article class="card testimonial reveal">
+            <div class="head"><div class="avatar">NG</div><div class="meta"><strong>Natalia G.</strong><span>Mamá de Sofía, 11 años</span></div></div>
+            <div class="stars">★★★★★</div>
+            <p>"Mi hija pasó de no querer ir al colegio a volver contenta. Hoy comprende textos, organiza su carpeta y se siente mucho más segura."</p>
+          </article>
+          <article class="card testimonial reveal">
+            <div class="head"><div class="avatar">LB</div><div class="meta"><strong>Laura B.</strong><span>Mamá de Bruno, 8 años</span></div></div>
+            <div class="stars">★★★★★</div>
+            <p>"Comenzó sin lectura ni escritura adquirida. Hoy incorporó estrategias que usa sola, tanto en la escuela como en su vida diaria."</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="preguntas" class="section">
+      <div class="container">
+        <div class="title reveal">
+          <div class="eyebrow">Preguntas frecuentes</div>
+          <h2>Resolvemos tus dudas antes de empezar</h2>
+          <p>Si querés saber si este acompañamiento es para tu hijo, este es un buen lugar para empezar.</p>
+        </div>
+        <div class="faq-grid">
+          <article class="card faq-card reveal">
+            <h3>Sobre la atención</h3>
+            <details open><summary>¿Cómo sé si mi hijo necesita acompañamiento?</summary><p>Si notás frustración, bajo rendimiento, rechazo escolar, dificultades para leer, escribir, concentrarse o sostener consignas, una consulta puede orientarte rápido.</p></details>
+          </article>
+          <article class="card faq-card reveal">
+            <h3>Sobre el método</h3>
+            <details open><summary>¿Qué diferencia este enfoque?</summary><p>Se interviene sobre las funciones que sostienen el aprendizaje para generar avances reales y no solo respuestas momentáneas.</p></details>
+          </article>
+          <article class="card faq-card reveal">
+            <h3>Sobre turnos</h3>
+            <details open><summary>¿Cómo reservo un turno?</summary><p>Podés escribir por WhatsApp o completar la ficha de inscripción. Luego se coordina el siguiente paso según disponibilidad.</p></details>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="inscripcion" class="section dark">
+      <div class="container">
+        <div class="contact reveal">
+          <div class="contact-top">
+            <div class="eyebrow">Inscripción y contacto</div>
+            <h2>El próximo avance puede empezar hoy</h2>
+            <p>Contame qué está pasando y te ayudo a encontrar la mejor forma de acompañar a tu hijo.</p>
+            <div class="contact-phone">WhatsApp: 11 2732 5400</div>
+          </div>
+          <div class="form">
+            <div class="field"><label for="form-nombre">Nombre</label><input id="form-nombre" type="text" placeholder="Tu nombre"></div>
+            <div class="field"><label for="form-telefono">Teléfono</label><input id="form-telefono" type="tel" placeholder="Tu número"></div>
+            <div class="field full"><label for="form-mensaje">¿Qué te preocupa hoy?</label><textarea id="form-mensaje" rows="4" placeholder="Contame brevemente qué está necesitando tu hijo..."></textarea></div>
+            <div class="field full"><button class="btn btn-primary" type="button" onclick="enviarFormulario()" style="width:100%">Enviar por WhatsApp</button></div>
+          </div>
+          <div class="chips" style="margin-top:18px">
+            <div class="chip">Respuesta rápida</div>
+            <div class="chip">Atención personalizada</div>
+            <div class="chip">Cupos limitados</div>
+          </div>
+          <div style="text-align:center;margin-top:22px">
+            <a class="btn btn-secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSd57I-dSwjIoat7Fl62i2eyNpU_7EywVzpHQwwrxPH_2_QDRw/viewform" target="_blank" rel="noopener noreferrer">Completar ficha de inscripción</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="sticky" aria-label="Acción rápida">
+    <div class="sticky-inner">
+      <div class="sticky-copy"><strong>¿Querés hablar ahora?</strong>Reservá una consulta inicial por WhatsApp.</div>
+      <a class="btn btn-primary" href="https://wa.me/5491127325400?text=Hola%20Elisabet%2C%20quiero%20reservar%20una%20consulta%20inicial" target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand"><img src="https://aprendeconmente.github.io/web/images/logo.png" alt="Logo Aprende con Mente"><span>Aprende con Mente</span></div>
+      <p>Elisabet Escobar · MP 286478</p>
+      <p>Psicopedagogía Neurofuncional · Método N.E.U.R.O-A</p>
+      <p>Villa Maipú, San Martín</p>
+      <p class="footer-copy">© 2026 Aprende con Mente. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <div class="chat-widget">
+    <div id="chatBox" class="chat-box" aria-live="polite">
+      <div class="chat-header">
+        <div class="chat-header-main">
+          <div class="chat-avatar">🧠</div>
+          <div><div class="chat-title">Aprende con Mente</div><div class="chat-subtitle">Asistente de orientación inicial</div></div>
+        </div>
+        <button class="chat-close" type="button" onclick="cerrarChat()" aria-label="Cerrar chat">✕</button>
+      </div>
+      <div id="chatMessages" class="chat-messages"></div>
+      <div class="chat-input-area">
+        <input id="chatInput" class="chat-input" type="text" placeholder="Escribí tu respuesta..." autocomplete="off">
+        <button id="chatSend" class="chat-send" type="button" aria-label="Enviar">➤</button>
+      </div>
+    </div>
+    <button id="chatToggle" class="chat-toggle" type="button" aria-label="Abrir chat de consulta">💬</button>
+  </div>
+
+  <script>
+    (function(){
+      const WHATSAPP_NUMBER="5491127325400";
+      const menuBtn=document.getElementById("menuBtn");
+      const mobileMenu=document.getElementById("mobileMenu");
+      const revealElements=document.querySelectorAll(".reveal");
+      const chatBox=document.getElementById("chatBox");
+      const chatToggle=document.getElementById("chatToggle");
+      const chatMessages=document.getElementById("chatMessages");
+      const chatInput=document.getElementById("chatInput");
+      const chatSend=document.getElementById("chatSend");
+      const preguntas=[
+        "Hola, soy el asistente de Aprende con Mente.\n\nVoy a hacerte unas preguntas rápidas para ayudarte mejor.\n\n¿Cuál es tu nombre?",
+        "¿Cuál es el nombre y apellido del niño o niña?",
+        "¿Qué edad tiene o cuál es su fecha de nacimiento?",
+        "¿Qué situación te preocupa hoy?\nPodés escribir brevemente qué está pasando."
+      ];
+      const claves=["adulto","nino","edad","consulta"];
+      let paso=0,respuestas={},chatAbierto=false;
+
+      menuBtn.addEventListener("click",()=>{const open=mobileMenu.classList.toggle("open");menuBtn.setAttribute("aria-expanded",String(open));menuBtn.textContent=open?"✕":"☰"});
+      document.querySelectorAll(".mobile-link").forEach(link=>link.addEventListener("click",()=>{mobileMenu.classList.remove("open");menuBtn.setAttribute("aria-expanded","false");menuBtn.textContent="☰"}));
+      document.querySelectorAll('a[href^="#"],[data-scroll]').forEach(trigger=>{trigger.addEventListener("click",function(e){const selector=this.getAttribute("href")||this.getAttribute("data-scroll");if(!selector||selector[0]!=="#")return;const target=document.querySelector(selector);if(!target)return;e.preventDefault();target.scrollIntoView({behavior:"smooth",block:"start"})})});
+
+      if("IntersectionObserver" in window){
+        const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target)}})},{threshold:.14});
+        revealElements.forEach(el=>observer.observe(el));
+      }else{
+        revealElements.forEach(el=>el.classList.add("visible"));
+      }
+
+      window.enviarFormulario=function(){
+        const nombre=document.getElementById("form-nombre").value.trim();
+        const telefono=document.getElementById("form-telefono").value.trim();
+        const mensaje=document.getElementById("form-mensaje").value.trim();
+        if(!nombre||!mensaje){alert("Por favor completá tu nombre y contanos brevemente tu consulta.");return}
+        const texto="Hola Elisabet. Me contacto desde la web.\n\nNombre: "+nombre+"\n"+(telefono?"Teléfono: "+telefono+"\n":"")+"Consulta: "+mensaje+"\n\nQuiero recibir orientación sobre el acompañamiento.";
+        window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(texto),"_blank","noopener");
+      };
+
+      function agregarBot(texto){const div=document.createElement("div");div.className="msg-bot";div.textContent=texto;chatMessages.appendChild(div);chatMessages.scrollTop=chatMessages.scrollHeight}
+      function agregarUser(texto){const div=document.createElement("div");div.className="msg-user";div.textContent=texto;chatMessages.appendChild(div);chatMessages.scrollTop=chatMessages.scrollHeight}
+      function resetChat(){paso=0;respuestas={};chatMessages.innerHTML=""}
+      window.cerrarChat=function(){chatAbierto=false;chatBox.classList.remove("open");chatToggle.textContent="💬"};
+      function toggleChat(){chatAbierto=!chatAbierto;chatBox.classList.toggle("open",chatAbierto);chatToggle.textContent=chatAbierto?"✕":"💬";if(chatAbierto){if(paso===0){setTimeout(()=>{agregarBot(preguntas[0]);paso=1},250)}setTimeout(()=>chatInput.focus(),280)}}
+      function enviarRespuesta(){
+        const valor=chatInput.value.trim(); if(!valor)return;
+        chatInput.value=""; agregarUser(valor); respuestas[claves[paso-1]]=valor;
+        if(paso<preguntas.length){const siguiente=preguntas[paso]; paso+=1; setTimeout(()=>agregarBot(siguiente),420); return}
+        setTimeout(()=>{agregarBot("Perfecto. Te llevo a WhatsApp para que Elisabet pueda responderte personalmente."); setTimeout(()=>{const texto="Hola Elisabet. Me contacto desde la web.\n\nAdulto responsable: "+(respuestas.adulto||"")+"\nNiño/a: "+(respuestas.nino||"")+"\nEdad o fecha de nacimiento: "+(respuestas.edad||"")+"\nMotivo de consulta: "+(respuestas.consulta||"")+"\n\nQuiero recibir orientación."; window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(texto),"_blank","noopener"); setTimeout(()=>{cerrarChat();resetChat()},500)},950)},300)
+      }
+      chatToggle.addEventListener("click",toggleChat);
+      chatSend.addEventListener("click",enviarRespuesta);
+      chatInput.addEventListener("keydown",e=>{if(e.key==="Enter")enviarRespuesta()});
+    })();
+  </script>
+</body>
+</html>
