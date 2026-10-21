@@ -1,0 +1,58 @@
+{
+  "_nota": "Precios del sitio. Editar solo este archivo para cambiar precios. Actualizar 'updated' al modificar.",
+  "updated": "2026-10-21",
+  "moneda": "ARS",
+  "servicios": [
+    {
+      "id": "acompanamiento-psicopedagogico",
+      "titulo": "Acompañamiento psicopedagógico",
+      "descripcion": "Sesiones individuales para trabajar dificultades de aprendizaje, atención, memoria, funciones cognitivas y alfabetización inicial desde el origen del problema.",
+      "icono": "📘",
+      "precioSesion": "ARS 45.000",
+      "detalleSesion": "por sesión de 45 min",
+      "planMensual": {
+        "activo": true,
+        "precio": "Consultar",
+        "detalle": "pagos mensuales preferenciales",
+        "etiqueta": "",
+        "destacado": false
+      },
+      "orden": 1,
+      "activo": true
+    },
+    {
+      "id": "grupos-estimulacion-alfabetizacion",
+      "titulo": "Grupos de estimulación y alfabetización",
+      "descripcion": "Espacios reducidos para potenciar lectura, escritura, lenguaje, conducta y habilidades previas al aprendizaje con recursos lúdicos y estructurados.",
+      "icono": "🌟",
+      "precioSesion": "ARS 60.000",
+      "detalleSesion": "programa grupal",
+      "planMensual": {
+        "activo": false,
+        "precio": "",
+        "detalle": "",
+        "etiqueta": "",
+        "destacado": false
+      },
+      "orden": 2,
+      "activo": false
+    },
+    {
+      "id": "inclusion-educativa",
+      "titulo": "Inclusión educativa",
+      "descripcion": "Orientación a docentes, adaptaciones pedagógicas y seguimiento escolar para que la inclusión sea real, posible y sostenida en el tiempo.",
+      "icono": "🏫",
+      "precioSesion": "ARS 45.000",
+      "detalleSesion": "por sesión de 45 min",
+      "planMensual": {
+        "activo": false,
+        "precio": "",
+        "detalle": "",
+        "etiqueta": "",
+        "destacado": false
+      },
+      "orden": 3,
+      "activo": true
+    }
+  ]
+}
