@@ -519,3 +519,7 @@ section[id] { scroll-margin-top: 72px; }
   .nav { padding: .6rem 1.25rem; }
   .brand img { width: 48px; height: 48px; }
 }
+
+/* Icono de Instagram */
+.ig-link { display: inline-flex; align-items: center; vertical-align: middle; color: inherit; padding: 2px; }
+.ig-link:hover { color: var(--celeste); }
