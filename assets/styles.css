@@ -132,7 +132,7 @@ a { color: inherit; }
 /* Botones */
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
-  padding: .9rem 1.6rem;
+  padding: .9rem 1.6rem; min-height: 44px;
   border-radius: 999px;
   font-weight: 700; font-size: 1rem;
   text-decoration: none;
@@ -252,7 +252,7 @@ a { color: inherit; }
 .split figure { margin: 0; border-radius: 36px; overflow: hidden; background: var(--superficie); }
 .split figure img { width: 100%; height: auto; }
 
-.checklist { list-style: none; padding: 0; margin: 0 0 1.5rem; display: grid; gap: .8rem; }
+.checklist { list-style: none; padding: 0; margin: 0 0 1.5rem; display: grid; gap: 1rem; }
 .checklist li {
   position: relative; padding-left: 1.6rem; color: var(--tinta);
 }
@@ -317,7 +317,7 @@ details p { color: var(--tinta-suave); margin-top: .9rem; padding-right: 2rem; }
 .contact h2 { color: #fff; }
 .contact .lead { color: #B9C4E6; }
 .contact-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: .6rem; }
-.muted-light { color: #8E9AC2; font-size: .92rem; margin-top: .4rem; }
+.muted-light { color: #AEB8D6; font-size: .92rem; margin-top: .4rem; }
 
 /* Las secciones no quedan tapadas por el encabezado fijo al navegar por el menú */
 section[id] { scroll-margin-top: 72px; }
@@ -459,10 +459,11 @@ section[id] { scroll-margin-top: 72px; }
   text-align: center;
   padding: 2.5rem 1.5rem;
   background: var(--marino);
-  color: #8E9AC2;
+  color: #AEB8D6;
   font-size: .9rem;
 }
 .site-footer strong { color: #fff; }
+.site-footer a { color: #C9D3EE; text-underline-offset: 3px; }
 .site-footer p + p { margin-top: .3rem; }
 
 /* Movimiento: revelado al hacer scroll.
